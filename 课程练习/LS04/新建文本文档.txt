@@ -1,0 +1,96 @@
+·标识符与保留字
+    arguements   如果传递参数时，实际参数比形参数目多，可用来获取多余的参数
+function fun(a){
+
+	console.log(a);
+
+	console.log(arguments[1]);
+
+	console.log(arguments[2]);
+
+}
+
+fun(1,2,3);    // 1  2  3
+
+
+//扩展知识在chrome中测试下述代码： var a,b;  与 var a=b;   谁是局部变量，谁是全局变量？
+function foo(){
+	var a=b=3;
+}
+foo();
+console.log("b:",b);//是否报错？输出几？为什么？
+console.log("a:",a);//是否报错？
+
+//b:  3
+//a报错
+//var a=b=3;    等同于    var a = 3;  b = 3;    a是局部变量,外部不能直接访问  b是全局变量,外部可以访问
+
+特性：
+非严格模式下，this指向window
+严格模式下，this指向undefined
+
+写出一个函数，判断当前是处在严格模式还是非严格模式
+function isstrict(){
+
+	'use strict'
+	
+	return this === window ? false : true;
+
+	//  return this === undefined ? true : false;
+}
+
+isstrict();  // true
+
+function isstrict(){
+
+	return this === window ? false : true;
+
+	//  return this === undefined ? true : false;
+}
+
+isstrict();   // false
+
+
+
+function fun(){
+	console.log(typeof  this);    // object
+	//  非严格模式  指向window  是对象
+}
+function fun(){
+	'use strict'
+	console.log(typeof  this);    // undefined
+	//  严格模式  指向undefined
+}
+
+
+switch语句中的case
+
+var i = 65;
+switch(true){     //若是改为 switch(new Boolean(true))   返回default  类型不一样
+    case i>=60:
+        alert('及格');
+        break;
+    case i<60:
+        alert('不及格');
+        break;
+    default:
+        alert('default');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
