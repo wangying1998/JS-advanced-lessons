@@ -1,0 +1,29 @@
+关系运算符
+==  若类型不同，先转换再比较 （一般向基本数据类型转换）
+=== 类型不同则false，类型相同则判断同==
+
+var obj1 = new String("xyz");
+var obj2 = new String("xyz");
+console.log("xyz"===obj1);  // f
+console.log(obj1 == obj2);  // f
+console.log(obj1 === obj2);  // f
+console.log(obj1 == new String("xyz"));  // f
+
+
+
+var obj1 = new String("xyz");
+var obj2 = obj1;
+console.log("xyz"===obj1);  // f
+console.log(obj1 == obj2);  // t
+console.log(obj1 === obj2);  // t
+console.log(obj1 == new String("xyz"));  // f
+
+
+
+
+
+
+
+
+
+
