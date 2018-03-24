@@ -1,0 +1,73 @@
+函数定义方式（3种）:
+- 通过函数声明的形式来定义
+- 通过函数表达式的形式来定义（匿名函数用的多）
+- 通过new Function来定义（Function构造函数实例化）
+
+
+var x=45;
+
+var test = function(){
+
+	console.log("输出",this.x);
+}
+
+var obj = {
+
+	x:23
+
+}
+
+obj.test = test;
+
+obj.test();      // 输出 23     调用对象作为主体
+test();       // 输出 45      调用window作为主体
+
+
+var x=45;
+
+var obj = {
+
+	x:23,
+
+	test:function(){
+
+		function foo(){
+
+			console.log(this.x);
+
+		}
+
+		foo();
+
+	}
+
+}
+
+obj.test();   // 45    调用window作为主体
+
+
+call()
+objA = {name:"AA"};
+objB = {name:"BB"};
+objA.foo = function(x,y){
+    console.log(x+y);
+};
+objA.foo(1,2);//3
+objA.foo.call(objB,3,4);// 7
+objA.foo.call(objB,[3,4]); // 7
+
+类数组对象  类对象数组
+
+
+
+
+
+
+
+
+
+
+
+
+
+
