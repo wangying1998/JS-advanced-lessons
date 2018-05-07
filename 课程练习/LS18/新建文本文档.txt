@@ -1,0 +1,33 @@
+// forEach()
+var arr = [2,5,8];
+
+var arr1 = [1,6,7];
+
+var arr3 = [];
+
+arr.forEach(function(a,i){
+
+	if(a>this[i])
+
+		arr3.push(a);
+
+	else
+
+		arr3.push(this[i]);
+
+},arr1);
+
+console.log(arr3);
+    //  (3)?[2, 6, 8]
+
+// every   检验数组中是否每一个元素均满足条件  如果有一个不满足 则不进行后续判断  返回true或false
+
+// some  检验数组中是否每一个元素均满足条件  如果有一个满足 则不进行后续判断  返回true或false
+
+// map 返回一个数组  不破坏原d数组
+
+
+
+
+
+
