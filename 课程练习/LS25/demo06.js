@@ -8,7 +8,9 @@ window.onload = function (e) {
         console.log("target:",e.target);
         console.log("this:",this);
         console.log(e.bubbles,e.cancelable,e.cancelBubble);
-        //e.stopPropagation();
+        // bubbles 指示事件是否是起泡事件类型。   cancelable  指示事件是否可拥可取消的默认动作。
+        // cancelBubble  与stopPropagation()作用相同  但是只能用于IE浏览器
+        //e.stopPropagation();   // 不能用于IE浏览器        
     },false);//改成true会怎样
 
     div2.addEventListener("click",function (e) {
